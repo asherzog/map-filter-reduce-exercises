@@ -1,9 +1,19 @@
 function multiplyBy10 (array) {
- // your code here
+  return array.map((nums) => nums*10);
 };
 
 function shiftRight (array) {
- // your code here
+  var last = array[array.length - 1];
+  var newArr = [];
+  array = array.map(function(word) {
+    if (word == last) {
+      newArr.unshift(word);
+    }
+    newArr.push(word);
+
+  });
+  newArr.pop();
+  return newArr;
 };
 
 function onlyVowels (array) {
