@@ -17,11 +17,27 @@ function shiftRight (array) {
 };
 
 function onlyVowels (array) {
- // your code here
+  let vowels = ['a','e','i','o','u'];
+  let noVowels = array.map(function(word){
+    var removing = [];
+    word.split("").map(function(letter){
+      if (vowels.indexOf(letter) !== -1){
+        removing.push(letter);
+      }
+      return removing.join('');
+    });
+    return removing.join('');
+  });
+  return noVowels;
 };
 
 function doubleMatrix (array) {
- // your code here
+  return array.map(function(matrix){
+    let answer = matrix.map(function(nums){
+      return nums * 2;
+    });
+    return answer;
+  });
 };
 
 module.exports = {
