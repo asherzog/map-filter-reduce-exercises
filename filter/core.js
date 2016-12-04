@@ -1,5 +1,5 @@
 function onlyEven (array) {
-  return array.filter(function(nums) {if (nums % 2 === 0){ return nums}});
+  return array.filter((nums) => {if (nums % 2 === 0){ return nums;}});
 };
 
 function onlyOneWord (array) {
@@ -27,8 +27,19 @@ function positiveRowsOnly (array) {
 };
 
 function allSameVowels(array) {
-  console.log(array[0]);
-
+  return array.filter(function(word){
+    let vowels = [];
+    let sortMe = [];
+    word.split("").map(function(letter){
+      if (letter.match(/a|e|i|o|u/gi)){
+        vowels.push(letter);
+        sortMe.push(letter);
+      }
+      return vowels;
+    });
+    sortMe = sortMe.sort();
+    return (sortMe.forEach((a)=>{a;}) === vowels.forEach((a)=>{a;}));
+  });
 }
 
 
